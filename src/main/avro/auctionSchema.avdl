@@ -1,0 +1,62 @@
+@namespace("com.zenfractal")
+protocol SparkParquetAvro {
+
+
+record Auction {
+ 	int auctionId;
+	int publisherId;
+	float revenue;
+}
+
+record PublisherExtraInfo {
+	string publisherCEOName;
+	string publisherCEODogName;
+	string publisherCEODogVetName;
+	string publisherCEODogVetWifeName;
+}
+
+record Publisher {
+	int publisherId;
+	string publisherName;
+}
+
+record PublisherHeavy {
+	Publisher publisher;
+	PublisherExtraInfo extraInfo;
+	string extraString1;
+	string extraString2;
+}
+
+record AuctionHeavy {
+ 	int auctionId;
+	int publisherId;
+	optional double revenue;
+	optional string publisherName;
+	optional string publisherCEOName;
+	optional string publisherCEODogName;
+	optional string publisherCEODogVetName;
+	optional string publisherCEODogVetWifeName;
+}
+
+record AuctionNested {
+	int auctionId;
+	int publisherId;
+	float revenue;
+	Publisher publisherName;
+}
+
+record AuctionHeavyNested {
+	AuctionNested auctionNested;
+	PublisherHeavy publisherName;
+	string extraString1;
+	string extraString2;
+}
+
+record AuctionFilt {
+ 	int auctionId;
+	int publisherId;
+}
+
+
+
+}
